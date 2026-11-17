@@ -1,0 +1,38 @@
+# Your own fields. The logging form is built from this file.
+# Change it, save, reload the page. See README.md for the data-quality rules.
+student: "pseudonym-07"        # a pseudonym, never your real name
+target: mood_evening           # what the models predict (a number or a scale)
+fields:
+  - name: sleep_hours          # sleep belongs to the day you wake up
+    type: number               # number | scale | yesno | choice
+    min: 0
+    max: 14
+    rollup: last               # once a day: a new entry replaces the old
+  - name: coffee_cups
+    type: number
+    min: 0
+    max: 10
+    rollup: sum                # log each cup as 1; the day's total is the sum
+  - name: mood_morning
+    type: scale
+    min: 1
+    max: 10
+    rollup: last
+  - name: exercised
+    type: yesno
+    rollup: last
+  - name: breakfast
+    type: choice
+    options: [poor, medium, good]          # ordered: worst -> best
+    ordered: true
+    rollup: last
+  - name: bedtime
+    type: choice
+    options: [early, late, crazy_late]
+    ordered: true
+    rollup: last
+  - name: mood_evening
+    type: scale
+    min: 1
+    max: 10
+    rollup: last
