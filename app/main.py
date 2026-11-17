@@ -2,7 +2,7 @@
 from datetime import date as Date
 
 from fastapi import FastAPI, HTTPException
-from fastapi.responses import FileResponse
+from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
@@ -23,7 +23,11 @@ def load(dataset):
 
 @app.get("/")
 def index():
-    return FileResponse(STATIC / "index.html")
+    # VERSION counts deploys. It is shown on the Results page and added to the
+    # app.js / style.css addresses, so a phone fetches the new files at once.
+    version = (config.ROOT / "VERSION").read_text().strip()
+    html = (STATIC / "index.html").read_text().replace("%VERSION%", version)
+    return HTMLResponse(html, headers={"Cache-Control": "no-cache"})
 
 
 @app.get("/api/config")

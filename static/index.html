@@ -11,7 +11,7 @@
   <link rel="manifest" href="/static/manifest.json">
   <link rel="icon" href="/static/icon.svg" type="image/svg+xml">
   <title>Habit Arena</title>
-  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="/static/style.css?v=%VERSION%">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 </head>
 <body>
@@ -127,9 +127,10 @@
         <h2>Prediction log</h2>
         <div id="live-log"></div>
       </div>
+      <p class="muted version">Version %VERSION%</p>
     </section>
   </main>
 
-  <script src="/static/app.js"></script>
+  <script src="/static/app.js?v=%VERSION%"></script>
 </body>
 </html>
