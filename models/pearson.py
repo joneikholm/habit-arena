@@ -1,7 +1,6 @@
 """Pearson's r: picks the one prev_ column with the largest |r| and predicts
-with its straight line. Paste your functions from the LNN platform (Pearson
-exercises 1-10) between the two lines below. Paste ALL of them: the ones listed
-in NEEDED call the others.
+with its straight line. From step 10 on the LNN platform, copy the given (grey) code
+at the top of the editor AND your own code, and paste both between the two lines below.
 
 Until you paste, the model uses reference/pearson.py if your teacher gave you
 one, and otherwise waits for your code."""

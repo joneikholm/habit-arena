@@ -1,7 +1,7 @@
 """Single neuron: one weight per prev_ column plus the bias (the last weight,
 with input 1). Inputs are scaled to 0..1; the target stays on its own scale.
-Paste your functions from the LNN platform (neuron exercises 11-18) between the
-two lines below. Paste ALL of them: the ones in NEEDED call the others.
+From step 18 on the LNN platform, copy the given (grey) code at the top of the editor AND your
+own code, and paste both between the two lines below.
 
 Until you paste, the model uses reference/neuron.py if your teacher gave you
 one, and otherwise waits for your code."""

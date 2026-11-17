@@ -72,8 +72,14 @@ Each file in `models/` has a block:
 # ---- END ----
 ```
 
-Paste ALL your functions from that exercise set there. Start with `mean`
-(exercise 1) in `models/mean_baseline.py`. A model you haven't pasted into uses
+Paste your code from the LNN platform there:
+
+| model file | copy from the platform |
+|---|---|
+| `models/mean_baseline.py` | step 1: your `mean` |
+| `models/pearson.py` | step 10: the given (grey) code at the top of the editor AND your own code |
+| `models/neuron.py` | step 18: the given (grey) code at the top of the editor AND your own code |
+ A model you haven't pasted into uses
 a ready-made file in `reference/` if your teacher gave you one, and otherwise
 says "waiting for your code". The Code column shows "your code", "reference",
 "missing: ..." or "no code yet"; if your code crashes, the error is shown
