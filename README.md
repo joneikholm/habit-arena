@@ -8,7 +8,7 @@ evening mood), and you watch which model wins as your data grows.
 ```bash
 git clone https://github.com/joneikholm/habit-arena.git
 cd habit-arena
-python3 -m venv .venv
+python3 -m venv .venv               # Windows: python -m venv .venv
 source .venv/bin/activate          # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 ```
