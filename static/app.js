@@ -307,14 +307,24 @@ function controls(f, current) {
     input.setAttribute("aria-label", pretty(f.name));
     const add = document.createElement("button");
     add.textContent = f.rollup === "last" ? "Save" : "Add";
-    const go = () => {
+    // Leaving the box saves too (the keyboard's Done/OK, or tapping elsewhere).
+    // Tapping the button blurs the box first, so that save has already happened
+    // when the click arrives: an empty box right after a save is not an error.
+    let savedAt = 0;
+    const go = (leaving) => {
+      if (input.value.trim() === "") {
+        if (!leaving && Date.now() - savedAt > 1000) showError(`${pretty(f.name)}: type a number`);
+        return;
+      }
       const v = parseNumber(input.value);
       if (v === null) return showError(`${pretty(f.name)}: type a number`);
       input.value = "";
+      savedAt = Date.now();
       input.blur();
       addEntry(f, v);
     };
-    add.onclick = go;
+    add.onclick = () => go(false);
+    input.onblur = () => go(true);
     input.onkeydown = (e) => {
       if (e.key === "Enter") go();
     };
